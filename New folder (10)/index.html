@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Epoch · Foundation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- فایل CSS سفارشی -->
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <!-- ==================== هیرو سکشن ==================== -->
+    <div class="hero-container">
+        <!-- ویدئوی پس‌زمینه -->
+        <div class="video-wrapper">
+            <video
+                autoplay
+                loop
+                muted
+                playsinline
+                class="video-bg"
+                src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260505_101331_74f9b798-3f00-4e86-8a01-377aa16ffeaa.mp4"
+            ></video>
+        </div>
+
+        <!-- محتوای متنی -->
+        <div class="content-wrapper">
+            <h1 class="headline">
+                Foundation of the<br />new digital epoch
+            </h1>
+            <p class="subheadline">
+                Designing products, powering ecosystems and laying the foundation of a decentralized web for enterprises,
+                builders and communities alike.
+            </p>
+            <button class="contact-btn">
+                Contact Us
+            </button>
+        </div>
+
+        <!-- نوار ناوبری شناور -->
+        <div class="navbar-wrapper">
+            <nav class="navbar">
+                <!-- لوگو -->
+                <div class="logo-star">✦</div>
+                
+                <!-- دکمه‌ها -->
+                <button class="nav-btn">Products</button>
+                <button class="nav-btn">Docs</button>
+                
+                <!-- دکمه Get in touch -->
+                <div class="touch-btn">
+                    <span>Get in touch</span>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ==================== مارکی لوگوها ==================== -->
+    <section class="marquee-section">
+        <div class="marquee-wrapper">
+            <div class="marquee-track" id="marqueeTrack">
+                <!-- لوگوها با جاوااسکریپت ساخته می‌شوند -->
+            </div>
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>

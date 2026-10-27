@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kollektiva</title>
+    
+    <!-- Google Fonts: Geist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- فایل CSS سفارشی -->
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="relative h-screen w-full overflow-hidden font-geist text-white">
+        
+        <!-- ===== BACKGROUND PORTRAITS ===== -->
+        <div id="backgrounds-container" class="absolute inset-0">
+            <!-- با جاوااسکریپت ساخته می‌شوند -->
+        </div>
+        
+        <!-- ===== GRADIENT OVERLAY ===== -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/5 to-black/25 z-5"></div>
+        
+        <!-- ===== CONTENT LAYER ===== -->
+        <div class="relative z-10 flex h-full flex-col justify-between px-6 pb-6 pt-10 sm:px-10 sm:pb-8 sm:pt-14 lg:px-16">
+            
+            <!-- ===== TOP ZONE ===== -->
+            <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-16">
+                
+                <!-- عنوان ثابت -->
+                <h1 id="main-heading" class="max-w-xl text-3xl font-normal leading-[1.1] tracking-tight sm:text-5xl lg:text-7xl">
+                    Kollektiva is the talent you build with each&nbsp;day
+                </h1>
+                
+                <!-- توضیحات متغیر -->
+                <div id="description-container" class="max-w-xs text-sm font-medium leading-relaxed text-white/80 sm:text-base md:pt-2">
+                    <!-- با جاوااسکریپت پر می‌شود -->
+                </div>
+            </div>
+            
+            <!-- ===== BOTTOM ZONE ===== -->
+            <div class="flex flex-col gap-8">
+                
+                <!-- ===== AVATAR PICKER ROW ===== -->
+                <div class="flex items-end gap-2 overflow-x-auto pb-1 sm:gap-3 sm:overflow-visible sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" id="avatar-row">
+                    <!-- با جاوااسکریپت ساخته می‌شوند -->
+                </div>
+                
+                <!-- ===== META FOOTER ===== -->
+                <div id="meta-footer" class="border-t border-white/20 pt-5">
+                    <div class="flex flex-wrap items-center justify-between gap-4 text-sm font-medium">
+                        
+                        <!-- نام (متغیر) -->
+                        <div id="name-display" class="text-white">
+                            <!-- با جاوااسکریپت پر می‌شود -->
+                        </div>
+                        
+                        <!-- نقش (مخفی در موبایل) -->
+                        <div id="role-display" class="hidden text-white/70 sm:block">
+                            <!-- با جاوااسکریپت پر می‌شود -->
+                        </div>
+                        
+                        <!-- تِنور ثابت (مخفی تا md) -->
+                        <div class="hidden text-white/70 md:block">
+                            In the business since 2020
+                        </div>
+                        
+                        <!-- لینک WhatsApp -->
+                        <a href="#" class="underline underline-offset-4 transition-colors hover:text-white/70">
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./app.js"></script>
+</body>
+</html>

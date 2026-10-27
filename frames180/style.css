@@ -1,0 +1,1559 @@
+/* =========================================================
+   NOVAAI — COMPLETE STYLE
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    background: #0a0a0a;
+    scroll-behavior: auto;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+
+    background: #0a0a0a;
+    color: #fff;
+
+    font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+img,
+video,
+canvas {
+    display: block;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --bg: #0a0a0a;
+
+    --white: #fff;
+
+    --white-90: rgba(255, 255, 255, 0.90);
+    --white-85: rgba(255, 255, 255, 0.85);
+    --white-80: rgba(255, 255, 255, 0.80);
+    --white-70: rgba(255, 255, 255, 0.70);
+    --white-60: rgba(255, 255, 255, 0.60);
+    --white-55: rgba(255, 255, 255, 0.55);
+    --white-40: rgba(255, 255, 255, 0.40);
+
+    --border-15: rgba(255, 255, 255, 0.15);
+    --border-20: rgba(255, 255, 255, 0.20);
+    --border-25: rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   VIDEO BACKGROUND
+========================================================= */
+
+.video-wrapper {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    background: #0a0a0a;
+}
+
+
+/*
+    IMPORTANT:
+    هیچ Overlay یا Grain روی تصویر قرار نمی‌دهیم.
+*/
+
+
+.video-wrapper::before,
+.video-wrapper::after {
+    content: none;
+}
+
+
+/* =========================================================
+   POSTER / VIDEO / CANVAS
+========================================================= */
+
+.poster,
+#hero-video,
+#video-canvas {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    pointer-events: none;
+}
+
+
+/* Poster */
+
+.poster {
+    z-index: 1;
+
+    opacity: 1;
+
+    transition:
+        opacity 500ms ease;
+}
+
+
+/* Video */
+
+#hero-video {
+    z-index: 2;
+
+    opacity: 0;
+
+    transition:
+        opacity 500ms ease;
+}
+
+
+/* Canvas */
+
+#video-canvas {
+    z-index: 3;
+
+    opacity: 0;
+
+    transform: translateZ(0);
+
+    backface-visibility: hidden;
+
+    will-change:
+        opacity,
+        transform;
+
+    transition:
+        opacity 500ms ease;
+}
+
+
+/*
+    وقتی Canvas آماده شد
+*/
+
+#video-canvas.canvas-ready {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+main {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+
+    margin-inline: auto;
+
+    padding-inline: 20px;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding-inline: 32px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-inline: 48px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        padding-inline: 56px;
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 76px;
+
+    z-index: 50;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    background:
+        rgba(10, 10, 10, 0.08);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+.navbar .container {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #fff;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -0.035em;
+}
+
+.logo svg {
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+.navbar nav {
+    display: none;
+
+    align-items: center;
+
+    gap: 32px;
+
+    margin-left: auto;
+    margin-right: 32px;
+}
+
+.navbar nav a {
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 14px;
+
+    transition:
+        color 300ms ease;
+}
+
+.navbar nav a:hover {
+    color: #fff;
+}
+
+.navbar nav sup {
+    margin-left: 3px;
+
+    color: rgba(255, 255, 255, 0.60);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   NAV BUTTON
+========================================================= */
+
+.nav-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding-inline: 16px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius: 7px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    transition:
+        background 300ms ease,
+        border-color 300ms ease,
+        transform 300ms ease;
+}
+
+.nav-button:hover {
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    border-color:
+        rgba(255, 255, 255, 0.30);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+
+    padding-top: 104px;
+    padding-bottom: 48px;
+}
+
+.hero-inner {
+    min-height:
+        calc(100vh - 152px);
+
+    min-height:
+        calc(100svh - 152px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   HERO TOP
+========================================================= */
+
+.hero-top {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 32px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    color:
+        rgba(255, 255, 255, 0.90);
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.services span {
+    transition:
+        transform 300ms ease,
+        opacity 300ms ease;
+}
+
+.services span:hover {
+    transform:
+        translateX(4px);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-description {
+    max-width: 340px;
+
+    color: #fff;
+
+    font-size: 18px;
+
+    line-height: 1.65;
+
+    letter-spacing: -0.01em;
+
+    text-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   HERO BOTTOM
+========================================================= */
+
+.hero-bottom {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 40px;
+
+    margin-top: 90px;
+}
+
+
+/* =========================================================
+   HERO LEFT
+========================================================= */
+
+.hero-left {
+    max-width: 900px;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 34px;
+
+    padding:
+        7px 12px;
+
+    margin-bottom: 20px;
+
+    border-left:
+        2px solid #fff;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-right:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    color: #fff;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero h1 {
+    color: #fff;
+
+    font-size:
+        clamp(48px, 8vw, 104px);
+
+    font-weight: 400;
+
+    line-height: 1.04;
+
+    letter-spacing: -0.055em;
+
+    text-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        0 20px 60px rgba(0, 0, 0, 0.40);
+}
+
+
+/* =========================================================
+   MITHA CARD
+========================================================= */
+
+.contact-card {
+    width: 100%;
+    max-width: 390px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 12px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.20);
+
+    transition:
+        background 300ms ease,
+        transform 400ms ease;
+}
+
+.contact-card:hover {
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   MITHA IMAGE
+========================================================= */
+
+.contact-card img {
+    width: 80px;
+    height: 96px;
+
+    flex: 0 0 80px;
+
+    border-radius: 9px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.card-content {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+
+    padding-right: 4px;
+}
+
+.card-content h3 {
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.card-content small {
+    color:
+        rgba(255, 255, 255, 0.60);
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CARD BUTTON
+========================================================= */
+
+.card-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    margin-top: 5px;
+
+    padding:
+        0 14px;
+
+    border-radius: 999px;
+
+    background: #fff;
+
+    color: #000;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition:
+        background 300ms ease,
+        transform 300ms ease;
+}
+
+.card-button span {
+    margin-left: 5px;
+
+    font-size: 16px;
+
+    line-height: 1;
+}
+
+.card-button:hover {
+    background:
+        rgba(255, 255, 255, 0.85);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   SPACER
+========================================================= */
+
+.scroll-space {
+    width: 100%;
+
+    height: 80vh;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTION TWO
+========================================================= */
+
+.capability {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+
+    padding-top: 104px;
+    padding-bottom: 56px;
+}
+
+.capability-inner {
+    min-height:
+        calc(100vh - 160px);
+
+    min-height:
+        calc(100svh - 160px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   CAPABILITY TOP
+========================================================= */
+
+.capability-top {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.capability-top .badge {
+    margin-bottom: 0;
+}
+
+.capability-top .hero-description {
+    max-width: 360px;
+}
+
+
+/* =========================================================
+   CAPABILITY BOTTOM
+========================================================= */
+
+.capability-bottom {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 48px;
+
+    margin-top: 80px;
+}
+
+
+/* =========================================================
+   CAPABILITY LEFT
+========================================================= */
+
+.capability-left {
+    width: 100%;
+
+    max-width: 650px;
+}
+
+.capability-left h2 {
+    color: #fff;
+
+    font-size:
+        clamp(48px, 8vw, 104px);
+
+    font-weight: 400;
+
+    line-height: 1.04;
+
+    letter-spacing: -0.055em;
+
+    text-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        0 20px 60px rgba(0, 0, 0, 0.40);
+}
+
+.capability-left p {
+    max-width: 440px;
+
+    margin-top: 24px;
+
+    color:
+        rgba(255, 255, 255, 0.80);
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    text-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 28px;
+}
+
+.btn-primary,
+.btn-secondary {
+    min-height: 42px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding-inline: 20px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    transition:
+        background 300ms ease,
+        border-color 300ms ease,
+        transform 300ms ease;
+}
+
+.btn-primary {
+    background: #fff;
+
+    border:
+        1px solid #fff;
+
+    color: #000;
+}
+
+.btn-primary span {
+    margin-left: 5px;
+
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background:
+        rgba(255, 255, 255, 0.85);
+
+    transform:
+        translateY(-2px);
+}
+
+.btn-secondary {
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    color: #fff;
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+.btn-secondary:hover {
+    background:
+        rgba(255, 255, 255, 0.20);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   CAPABILITY PANEL
+========================================================= */
+
+.capability-card {
+    width: 100%;
+
+    max-width: 560px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.feature {
+    display: grid;
+
+    grid-template-columns: 34px 1fr;
+
+    gap: 14px;
+
+    padding: 20px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    transition:
+        background 300ms ease;
+}
+
+.feature:last-child {
+    border-bottom: 0;
+}
+
+.feature:hover {
+    background:
+        rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.number {
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   FEATURE TITLE
+========================================================= */
+
+.feature h3 {
+    display: flex;
+
+    align-items: center;
+
+    color: #fff;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    line-height: 1.35;
+}
+
+.feature h3::after {
+    content: "›";
+
+    margin-left: 9px;
+
+    color:
+        rgba(255, 255, 255, 0.40);
+
+    font-size: 20px;
+
+    transition:
+        transform 300ms ease,
+        color 300ms ease;
+}
+
+.feature:hover h3::after {
+    color: #fff;
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.feature p {
+    max-width: 430px;
+
+    margin-top: 6px;
+
+    color:
+        rgba(255, 255, 255, 0.70);
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(32px);
+
+    will-change:
+        opacity,
+        transform;
+
+    transition:
+        opacity 700ms ease-out,
+        transform 700ms ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   DELAYS
+========================================================= */
+
+.delay-0 {
+    transition-delay: 0ms;
+}
+
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-120 {
+    transition-delay: 120ms;
+}
+
+.delay-150 {
+    transition-delay: 150ms;
+}
+
+.delay-180 {
+    transition-delay: 180ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-220 {
+    transition-delay: 220ms;
+}
+
+.delay-270 {
+    transition-delay: 270ms;
+}
+
+.delay-280 {
+    transition-delay: 280ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
+.delay-390 {
+    transition-delay: 390ms;
+}
+
+.delay-400 {
+    transition-delay: 400ms;
+}
+
+.delay-410 {
+    transition-delay: 410ms;
+}
+
+.delay-420 {
+    transition-delay: 420ms;
+}
+
+.delay-500 {
+    transition-delay: 500ms;
+}
+
+.delay-520 {
+    transition-delay: 520ms;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 639px) {
+
+    .navbar {
+        height: 68px;
+    }
+
+    .navbar .container {
+        padding-inline: 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .nav-button {
+        min-height: 36px;
+
+        padding-inline: 12px;
+
+        font-size: 10px;
+    }
+
+    .hero {
+        padding-top: 94px;
+
+        padding-bottom: 36px;
+    }
+
+    .hero-inner {
+        min-height:
+            calc(100svh - 130px);
+    }
+
+    .hero-description {
+        max-width: 320px;
+
+        font-size: 16px;
+
+        line-height: 1.6;
+    }
+
+    .hero-bottom {
+        margin-top: 70px;
+
+        gap: 32px;
+    }
+
+    .hero h1,
+    .capability-left h2 {
+        font-size:
+            clamp(48px, 15vw, 72px);
+    }
+
+    .contact-card {
+        max-width: 100%;
+    }
+
+    .capability {
+        padding-top: 94px;
+
+        padding-bottom: 40px;
+    }
+
+    .capability-inner {
+        min-height:
+            calc(100svh - 134px);
+    }
+
+    .capability-bottom {
+        margin-top: 70px;
+
+        gap: 36px;
+    }
+
+    .capability-top .hero-description {
+        text-align: left;
+    }
+
+    .capability-card {
+        border-radius: 16px;
+    }
+
+    .feature {
+        grid-template-columns: 28px 1fr;
+
+        gap: 10px;
+
+        padding: 18px;
+    }
+
+    .feature h3 {
+        font-size: 15px;
+    }
+
+    .feature p {
+        font-size: 12px;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        min-height: 44px;
+
+        padding-inline: 17px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 640px) {
+
+    .hero-top,
+    .capability-top {
+        flex-direction: row;
+
+        align-items: flex-start;
+
+        justify-content: space-between;
+    }
+
+    .hero-description,
+    .capability-top .hero-description {
+        text-align: right;
+    }
+
+    .hero-bottom {
+        flex-direction: row;
+
+        align-items: flex-end;
+
+        justify-content: space-between;
+    }
+
+    .contact-card {
+        width: auto;
+    }
+
+    .capability-bottom {
+        flex-direction: row;
+
+        align-items: flex-end;
+
+        justify-content: space-between;
+    }
+
+    .capability-card {
+        width: 440px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 768px) {
+
+    .navbar {
+        height: 80px;
+    }
+
+    .navbar nav {
+        display: flex;
+    }
+
+    .nav-button {
+        padding-inline: 18px;
+
+        font-size: 12px;
+    }
+
+    .hero {
+        padding-top: 112px;
+
+        padding-bottom: 56px;
+    }
+
+    .hero-inner {
+        min-height:
+            calc(100svh - 168px);
+    }
+
+    .hero-top {
+        gap: 60px;
+    }
+
+    .services {
+        font-size: 11px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    .hero-bottom {
+        margin-top: 100px;
+    }
+
+    .capability {
+        padding-top: 112px;
+
+        padding-bottom: 64px;
+    }
+
+    .capability-inner {
+        min-height:
+            calc(100svh - 176px);
+    }
+
+    .capability-bottom {
+        margin-top: 100px;
+
+        gap: 60px;
+    }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1024px) {
+
+    .navbar nav {
+        gap: 40px;
+
+        margin-right: 40px;
+    }
+
+    .hero-top,
+    .capability-top {
+        flex-direction: row;
+    }
+
+    .hero-bottom {
+        flex-direction: row;
+    }
+
+    .capability-bottom {
+        flex-direction: row;
+
+        align-items: flex-end;
+
+        gap: 70px;
+    }
+
+    .capability-card {
+        max-width: 500px;
+    }
+}
+
+
+/* =========================================================
+   XL
+========================================================= */
+
+@media (min-width: 1280px) {
+
+    .container {
+        padding-inline: 56px;
+    }
+
+    .hero-description {
+        max-width: 370px;
+
+        font-size: 20px;
+    }
+
+    .hero-bottom {
+        margin-top: 130px;
+    }
+
+    .hero h1,
+    .capability-left h2 {
+        font-size:
+            clamp(72px, 7vw, 108px);
+    }
+
+    .capability-bottom {
+        gap: 100px;
+    }
+
+    .capability-card {
+        max-width: 540px;
+    }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(255, 255, 255, 0.30);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}

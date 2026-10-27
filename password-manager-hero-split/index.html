@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vaultly — Lock Down Your Passwords</title>
+<link href="https://db.onlinewebfonts.com/c/04e6981992c0e2e7642af2074ebe3901?family=Helvetica+Now+Display+Bold" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="bg-gradient"></div>
+
+  <div class="coin-field" aria-hidden="true">
+    <div class="coin coin--1">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="coinPurple" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#e4d9fb"/>
+            <stop offset="55%" stop-color="#b49bec"/>
+            <stop offset="100%" stop-color="#7342E2"/>
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="48" fill="url(#coinPurple)" stroke="#5a2fc2" stroke-width="1.5"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="coin coin--2">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="coinBlue" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#eaf1fb"/>
+            <stop offset="55%" stop-color="#a9c3ea"/>
+            <stop offset="100%" stop-color="#5a86c9"/>
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="48" fill="url(#coinBlue)" stroke="#3f6aa8" stroke-width="1.5"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="coin coin--3">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="url(#coinBlue)" stroke="#3f6aa8" stroke-width="1.5"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="coin coin--4">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="url(#coinPurple)" stroke="#5a2fc2" stroke-width="1.5"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="coin coin--5">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="url(#coinPurple)" stroke="#5a2fc2" stroke-width="1.5"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="coin coin--6">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="url(#coinBlue)" stroke="#3f6aa8" stroke-width="1.5"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <svg width="32" height="32" viewBox="0 0 256 256" fill="#192837" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 64 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 L 128 64 L 128 64.5 L 161 32 L 192 0 L 256 0 L 256 64 L 192 128 L 128 128 L 128 192 L 96 223 L 63.5 256 L 0 256 L 0 192 Z M 256 192 L 224 223 L 191.5 256 L 128 256 L 128 192 L 192 128 L 256 128 Z" />
+    </svg>
+
+    <div class="nav-links">
+      <a href="#">Vault</a>
+      <a href="#">Plans</a>
+      <a href="#">Install</a>
+      <a href="#">News</a>
+      <a href="#">Help</a>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn-pill btn-primary">Start For Free</button>
+      <button class="btn-pill btn-secondary">Sign In</button>
+    </div>
+
+    <button class="hamburger" id="menuToggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="backdrop" id="backdrop"></div>
+  <div class="sheet" id="sheet">
+    <div class="sheet-header">
+      <svg width="32" height="32" viewBox="0 0 256 256" fill="#192837" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 64 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 L 128 64 L 128 64.5 L 161 32 L 192 0 L 256 0 L 256 64 L 192 128 L 128 128 L 128 192 L 96 223 L 63.5 256 L 0 256 L 0 192 Z M 256 192 L 224 223 L 191.5 256 L 128 256 L 128 192 L 192 128 L 256 128 Z" />
+      </svg>
+      <button class="close-btn" id="closeMenu" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="sheet-divider"></div>
+    <div class="sheet-links">
+      <a href="#">Vault</a>
+      <a href="#">Plans</a>
+      <a href="#">Install</a>
+      <a href="#">News</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="sheet-cta">
+      <button class="btn-pill btn-primary">Start For Free</button>
+      <button class="btn-pill btn-secondary">Sign In</button>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>
+        <span class="nowrap">
+          Lock
+          <span class="icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#192837" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
+            </svg>
+          </span>
+          Down Your
+          <span class="icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#192837" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/>
+            </svg>
+          </span>
+          Passwords
+        </span>
+        <br/>
+        with Ironclad Security
+        <span class="icon fp-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#192837" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/>
+          </svg>
+        </span>
+      </h1>
+
+      <p>Zero stress, total control. Unbreakable storage, one-tap access, and pro-grade tools for your non-stop world.</p>
+
+      <button class="cta-btn">
+        <span>Get It Free</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcus — Bennet</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- فایل CSS سفارشی -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ==================== ROOT ==================== -->
+    <div class="root">
+        
+        <!-- ====== BACKGROUND IMAGE ====== -->
+        <img 
+            src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260729_022513_486985a2-ac8c-4278-91a8-071dcd9fcaff.png&w=1280&q=85" 
+            alt="" 
+            class="bg-image"
+        />
+
+        <!-- ====== FRONT PORTRAIT ====== -->
+        <img 
+            src="https://stone-expand-60400629.figma.site/_assets/v11/8da570354e86aa0d44ac3e4aa335a72c8e750d68.png" 
+            alt="Portrait" 
+            class="portrait"
+        />
+
+        <!-- ====== MARQUEE ====== -->
+        <div class="marquee-wrapper">
+            <div class="marquee-track" id="marqueeTrack">
+                <!-- ساخته می‌شود با جاوااسکریپت -->
+            </div>
+        </div>
+
+        <!-- ====== CREAM RULE ====== -->
+        <div class="cream-rule"></div>
+
+        <!-- ====== HEADER ====== -->
+        <header class="header">
+            <!-- برند -->
+            <a href="#" class="brand">Marcus</a>
+            
+            <!-- دسکتاپ: سال + ناو + سوشال -->
+            <div class="desktop-nav">
+                <span class="year">2025</span>
+                <div class="nav-column">
+                    <a href="#">Story</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Message</a>
+                </div>
+                <div class="social-column">
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+            
+            <!-- همبرگر (موبایل) -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+                <span class="bar top"></span>
+                <span class="bar middle"></span>
+                <span class="bar bottom"></span>
+            </button>
+        </header>
+
+        <!-- ====== FOOTER ====== -->
+        <footer class="footer">
+            <div class="footer-left">
+                <span>Visuals Composer</span>
+                <span>Digital Crafter</span>
+                <span>Obsessed by The Office</span>
+            </div>
+            <div class="footer-right">
+                <span>A homage to</span>
+                <span>Marcus Holloway</span>
+            </div>
+        </footer>
+
+        <!-- ====== MOBILE DRAWER ====== -->
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+        <div class="drawer-panel" id="drawerPanel">
+            <!-- دکمه بستن -->
+            <button class="close-btn" id="closeBtn">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Site Index -->
+            <div class="drawer-section site-index">
+                <span class="drawer-label">Site Index</span>
+                <div class="drawer-links">
+                    <a href="#" class="drawer-link" style="transition-delay: 300ms;">Story</a>
+                    <a href="#" class="drawer-link" style="transition-delay: 380ms;">Jobs</a>
+                    <a href="#" class="drawer-link" style="transition-delay: 460ms;">Message</a>
+                </div>
+            </div>
+            
+            <!-- Find Me -->
+            <div class="drawer-section find-me">
+                <span class="drawer-label">Find Me</span>
+                <div class="drawer-social">
+                    <a href="#" class="drawer-link" style="transition-delay: 550ms;">Instagram</a>
+                    <a href="#" class="drawer-link" style="transition-delay: 610ms;">TikTok</a>
+                    <a href="#" class="drawer-link" style="transition-delay: 670ms;">YouTube</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
